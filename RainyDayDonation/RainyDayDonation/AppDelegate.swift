@@ -14,9 +14,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let navigationTitleFont = UIFont(name: "Avenir", size: 20)!
+        
+        let rootVC =  MapViewController()
+        let navController = UINavigationController(rootViewController: rootVC)
+        let img = UIImage(named: "color")
+        UINavigationBar.appearance().setBackgroundImage(img, for: .default)
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().isTranslucent = true
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: navigationTitleFont]
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = navController
+        self.window?.makeKeyAndVisible()
+        
+        
         return true
     }
 
