@@ -13,13 +13,13 @@
 		28B4F8471E2447870088C5E8 /* RainyDayDonation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28B4F8451E2447870088C5E8 /* RainyDayDonation.xcdatamodeld */; };
 		28B4F8491E2447870088C5E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28B4F8481E2447870088C5E8 /* Assets.xcassets */; };
 		28B4F84C1E2447870088C5E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B4F84A1E2447870088C5E8 /* LaunchScreen.storyboard */; };
-		570893311E25342B00FF7AB2 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570893301E25342B00FF7AB2 /* ProjectViewController.swift */; };
 		570893331E25365200FF7AB2 /* Project+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570893321E25365200FF7AB2 /* Project+Addition.swift */; };
 		573B264C1E258E9E004BC63F /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573B264B1E258E9E004BC63F /* ProfileTableViewCell.swift */; };
 		573B26521E269EA7004BC63F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573B26511E269EA7004BC63F /* MapViewController.swift */; };
 		573B26541E26A354004BC63F /* Classroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573B26531E26A354004BC63F /* Classroom.swift */; };
 		573B26561E26CB4F004BC63F /* LocationMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573B26551E26CB4F004BC63F /* LocationMapAnnotation.swift */; };
-		5744E9201E2470F50091FEFB /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5744E91F1E2470F50091FEFB /* APIRequestManager.swift */; };
+		579DAD8C1E28907000C693DD /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579DAD8B1E28907000C693DD /* ProjectViewController.swift */; };
+		579DAD8E1E2890AC00C693DD /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579DAD8D1E2890AC00C693DD /* APIRequestManager.swift */; };
 		B8FC184E9CAE719A7197394E /* Pods_RainyDayDonation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986E22974CD4514BB99A9F28 /* Pods_RainyDayDonation.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,13 +33,13 @@
 		28B4F84B1E2447870088C5E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28B4F84D1E2447870088C5E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38994E69D7610C1C523F4352 /* Pods-RainyDayDonation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RainyDayDonation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RainyDayDonation/Pods-RainyDayDonation.debug.xcconfig"; sourceTree = "<group>"; };
-		570893301E25342B00FF7AB2 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectViewController.swift; path = ../../../../../Desktop/RainyDayDonations/RainyDayDonations/ProjectViewController.swift; sourceTree = "<group>"; };
 		570893321E25365200FF7AB2 /* Project+Addition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Project+Addition.swift"; sourceTree = "<group>"; };
 		573B264B1E258E9E004BC63F /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		573B26511E269EA7004BC63F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		573B26531E26A354004BC63F /* Classroom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classroom.swift; sourceTree = "<group>"; };
 		573B26551E26CB4F004BC63F /* LocationMapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationMapAnnotation.swift; sourceTree = "<group>"; };
-		5744E91F1E2470F50091FEFB /* APIRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRequestManager.swift; path = "../../../../Unit 4/AC3.2-GoogleBookAPI/GoogleBookAPI/GoogleBookAPI/APIRequestManager.swift"; sourceTree = "<group>"; };
+		579DAD8B1E28907000C693DD /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
+		579DAD8D1E2890AC00C693DD /* APIRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestManager.swift; sourceTree = "<group>"; };
 		986E22974CD4514BB99A9F28 /* Pods_RainyDayDonation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RainyDayDonation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFE602CC8A74D50E665199F /* Pods-RainyDayDonation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RainyDayDonation.release.xcconfig"; path = "Pods/Target Support Files/Pods-RainyDayDonation/Pods-RainyDayDonation.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,7 +90,7 @@
 		573B264D1E25E549004BC63F /* APIRequestManager */ = {
 			isa = PBXGroup;
 			children = (
-				5744E91F1E2470F50091FEFB /* APIRequestManager.swift */,
+				579DAD8D1E2890AC00C693DD /* APIRequestManager.swift */,
 			);
 			name = APIRequestManager;
 			sourceTree = "<group>";
@@ -99,7 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				573B26511E269EA7004BC63F /* MapViewController.swift */,
-				570893301E25342B00FF7AB2 /* ProjectViewController.swift */,
+				579DAD8B1E28907000C693DD /* ProjectViewController.swift */,
 				28B4F8401E2447860088C5E8 /* ProfileViewController.swift */,
 				573B264B1E258E9E004BC63F /* ProfileTableViewCell.swift */,
 			);
@@ -277,12 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				570893311E25342B00FF7AB2 /* ProjectViewController.swift in Sources */,
+				579DAD8C1E28907000C693DD /* ProjectViewController.swift in Sources */,
 				573B264C1E258E9E004BC63F /* ProfileTableViewCell.swift in Sources */,
 				570893331E25365200FF7AB2 /* Project+Addition.swift in Sources */,
-				5744E9201E2470F50091FEFB /* APIRequestManager.swift in Sources */,
 				28B4F8411E2447860088C5E8 /* ProfileViewController.swift in Sources */,
 				28B4F83F1E2447860088C5E8 /* AppDelegate.swift in Sources */,
+				579DAD8E1E2890AC00C693DD /* APIRequestManager.swift in Sources */,
 				28B4F8471E2447870088C5E8 /* RainyDayDonation.xcdatamodeld in Sources */,
 				573B26521E269EA7004BC63F /* MapViewController.swift in Sources */,
 				573B26561E26CB4F004BC63F /* LocationMapAnnotation.swift in Sources */,
