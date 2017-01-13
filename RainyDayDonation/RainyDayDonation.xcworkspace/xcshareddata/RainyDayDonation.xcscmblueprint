@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "58BBCE29783C047D08943E381DCB347621D33F41",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E4F636F222CCBB23682E7375D70458C4F2078C63" : 9223372036854775807,
+    "58BBCE29783C047D08943E381DCB347621D33F41" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "040507E4-796D-4CC1-AF1B-E40817C13700",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E4F636F222CCBB23682E7375D70458C4F2078C63" : "..\/Unit%204\/AC3.2-GoogleBookAPI",
+    "58BBCE29783C047D08943E381DCB347621D33F41" : "AC3.2-RainyDayDonation\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "RainyDayDonation",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "RainyDayDonation\/RainyDayDonation.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/C4Q\/AC3.2-RainyDayDonation.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "58BBCE29783C047D08943E381DCB347621D33F41"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/edwardanchundia\/AC3.2-GoogleBookAPI.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E4F636F222CCBB23682E7375D70458C4F2078C63"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ProfileViewController.swift
 //  RainyDayDonation
 //
 //  Created by Margaret Ikeda on 1/9/17.
@@ -42,7 +42,7 @@ class ProfileViewController: UIViewController, NSFetchedResultsControllerDelegat
         
         let imageView = UIImageView()
         view.addSubview(imageView)
-        imageView.image = #imageLiteral(resourceName: "iTunesArtwork@1x")
+        imageView.image = #imageLiteral(resourceName: "iTunesArtwork")
         imageView.layer.borderColor = UIColor.gray.cgColor
         imageView.layer.borderWidth = 5
         imageView.snp.makeConstraints { (make) -> Void in
