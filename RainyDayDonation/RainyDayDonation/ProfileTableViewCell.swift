@@ -49,6 +49,4 @@ class ProfileTableViewCell: UITableViewCell {
             make.width.equalTo(contentView.snp.width)
         }
     }
-    
-    
 }

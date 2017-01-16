@@ -18,7 +18,6 @@ class ProfileViewController: UIViewController, NSFetchedResultsControllerDelegat
     let tableView = UITableView()
     let font = UIFont(name: "Avenir", size: 20)
     let cellFont = UIFont(name: "Avenir", size: 15)
-    
     var mainContext: NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
@@ -26,10 +25,9 @@ class ProfileViewController: UIViewController, NSFetchedResultsControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
-        
-        initializeFetchedResultsController()
         setUpView()
+        view.backgroundColor = UIColor.white
+        initializeFetchedResultsController()
         DispatchQueue.main.async {
             self.initializeFetchedResultsController()
             self.tableView.reloadData()
@@ -95,6 +93,12 @@ class ProfileViewController: UIViewController, NSFetchedResultsControllerDelegat
         tableView.estimatedRowHeight = 150
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: cellReuseIdendifier)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Map", style: .plain, target: self, action: #selector(goingBackToMap))
+    }
+    
+    func goingBackToMap() {
+        let _ = navigationController?.popToRootViewController(animated: true)
     }
     
     func initializeFetchedResultsController() {

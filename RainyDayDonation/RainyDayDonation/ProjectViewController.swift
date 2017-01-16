@@ -17,7 +17,6 @@ class ProjectPageViewController: UIViewController, WKUIDelegate, NSFetchedResult
     var navBar = UINavigationBar()
     var fetechedResultsController: NSFetchedResultsController<Project>!
     var project: LocationMapAnnotation?
-    
     var mainContext: NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
@@ -102,5 +101,26 @@ class ProjectPageViewController: UIViewController, WKUIDelegate, NSFetchedResult
         } else {
             decisionHandler(WKNavigationActionPolicy.allow)
         }
+        
+        if let urlStr = navigationAction.request.url?.absoluteString {
+            if urlStr.isValidUrl() {
+                print("got it")
+                
+//                decisionHandler(.allow)
+            } else {
+                print("not yet")
+//                decisionHandler(.allow)
+            }
+        }
+    }
+    
+}
+
+extension String{
+    func isValidUrl() -> Bool {
+        if (self.hasPrefix("https://secure.donorschoose.org/donors/cartThankYou")) {
+            return true
+        }
+        return false
     }
 }

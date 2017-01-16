@@ -13,8 +13,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MGLMapView
     
     var classroomArray = [Classroom]()
     var annotations = [MGLPointAnnotation]()
-    let userLatitude: Float = 40.776104
-    let userLongitude: Float = -73.920822
+    var userLatitude: Float = 40.776104
+    var userLongitude: Float = -73.920822
     let locationManager: CLLocationManager = {
         let locMan: CLLocationManager = CLLocationManager()
         locMan.desiredAccuracy = kCLLocationAccuracyHundredMeters
@@ -22,25 +22,61 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MGLMapView
         return locMan
     }()
     let geocoder: CLGeocoder = CLGeocoder()
-    var proposalURL: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //Views
+        setupViews()
+        setupViewHierarchy()
+        //Set starting location
+        let initialLocation = CLLocation(latitude: CLLocationDegrees(userLatitude), longitude: CLLocationDegrees(userLongitude))
+        centerMapOnLocation(initialLocation)
+        //Delegates
+        locationManager.delegate = self
+        mapView.delegate = self
+        //Data Call
+        loadData()
+    }
+    
+    func setupViews() {
+        //MapView
         mapView = MGLMapView(frame: view.bounds)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.styleURL = MGLStyle.lightStyleURL(withVersion: 9)
         mapView.tintColor = UIColor.blue
-        loadAnnotations()
         
-        //set starting location
-        let initialLocation = CLLocation(latitude: CLLocationDegrees(userLatitude), longitude: CLLocationDegrees(userLongitude))
-        centerMapOnLocation(initialLocation)
-        //delegates
-        locationManager.delegate = self
-        mapView.delegate = self
-        //views
-        setupViewHierarchy()
+        //new search here button
+        let searchHereButton = UIButton()
+        mapView.addSubview(searchHereButton)
+        let image = UIImage(named: "color")
+        searchHereButton.setBackgroundImage(image, for: .normal)
+        searchHereButton.setTitle("Search Here", for: .normal)
+        searchHereButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: UIFontWeightThin)
+        searchHereButton.addTarget(self, action: #selector(searchButtonPressed), for: .touchUpInside)
+        searchHereButton.snp.makeConstraints { (make) -> Void in
+            make.centerX.equalTo(mapView.snp.centerX)
+            make.bottom.equalTo(mapView.snp.bottom).offset(-85)
+            make.width.equalTo(125)
+            make.height.equalTo(35)
+        }
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Profile", style: .plain, target: self, action: #selector(jumpToProfile))
+    }
+    
+    //MARK: - View Hierarchy
+    
+    func setupViewHierarchy() {
+        view.addSubview(mapView)
+        self.edgesForExtendedLayout = []
+    }
+    
+    func jumpToProfile() {
+        let profileViewController = ProfileViewController()
+        self.navigationController?.pushViewController(profileViewController, animated: true)
+    }
+    
+    func searchButtonPressed(sender: UIButton!) {
+        print("Im pressed")
         loadData()
     }
     
@@ -64,8 +100,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MGLMapView
             let name = dict.title
             let school = dict.schoolName
             let proposal = dict.proposalURL
-            proposalURL = proposal
-            let annotations = LocationMapAnnotation(name: name, school: school, url: dict.proposalURL, coordinate: coordinate)
+            let annotations = LocationMapAnnotation(name: name, school: school, url: proposal, coordinate: coordinate)
             annotations.coordinate = coordinate
             annotations.title = name
             annotations.subtitle = school
@@ -73,15 +108,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MGLMapView
             mapView.selectAnnotation(annotations, animated: true)
         }
     }
-    
-    //MARK: - View Hierarchy
-    
-    func setupViewHierarchy() {
-        view.addSubview(mapView)
-        self.edgesForExtendedLayout = []
-    }
-    
-    
     
     //MARK: - CLLocation
     
@@ -105,6 +131,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MGLMapView
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let validLocation: CLLocation = locations.last else { return }
+        let locationValue: CLLocationCoordinate2D = (manager.location?.coordinate)!
+        userLatitude =  Float(locationValue.latitude)
+        userLongitude = Float(locationValue.longitude)
         
         geocoder.reverseGeocodeLocation(validLocation) { (placemarks: [CLPlacemark]?, error: Error?) in
             //error handling
@@ -112,19 +141,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MGLMapView
                 dump(error!)
             }
             
-            guard
-                let validPlaceMarks: [CLPlacemark] = placemarks,
-                let validPlace: CLPlacemark = validPlaceMarks.last
-                else {
-                    return
-            }
-            print(validPlace)
+            guard let validPlaceMarks: [CLPlacemark] = placemarks,
+                let validPlace: CLPlacemark = validPlaceMarks.last else { return }
+                print(validPlace)
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error encountered")
         dump(error)
+    }
+    
+    func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
+        let center = mapView.centerCoordinate
+        let newlogitude = center.longitude
+        let newlatitude = center.latitude
+        print("log = \(newlogitude), lat = \(newlatitude)")
+        userLongitude = Float(newlogitude)
+        userLatitude = Float(newlatitude)
     }
     
     //MARK: - MGLAnnotations
@@ -156,7 +190,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MGLMapView
         return annotationImage
     }
     
-    //HERE
     func mapView(_ mapView: MGLMapView, annotation: MGLAnnotation, calloutAccessoryControlTapped control: UIControl) {
         let vc = ProjectPageViewController()
         if let annotationClicked = annotation as? LocationMapAnnotation {
